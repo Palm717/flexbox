@@ -1,0 +1,77 @@
+/*RESETS*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column; /*part of sticky footer const*/
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+
+/*GLOBAL CLASSES*/
+.text-content {
+    text-align: center;
+}
+
+/*CUSTOM STYLE*/
+header {
+    background-color: darkgray;
+    padding: 15px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+header h3 {
+    color: white;
+}
+
+header nav a:not(:last-child) {
+    margin-right: 10px;
+}
+
+/*this is a concept of a sticky footer layout*/
+main {
+    display: flex;
+    flex: 1; /*crucial in sticky footer design*/
+}
+
+main section {
+    flex: 1;
+}
+
+/*work on the short hand of the flex property*/
+.left {
+    background: coral;
+    /*flex-grow: 0
+    flex-shrink: 3;*/
+    /*flex:2;*/
+}
+
+.right{
+    background: lightseagreen;
+    /*flex-grow: 5;*/
+}
+
+/*sticky footer layout*/
+footer {
+    background:lightblue;
+    padding: 30px 5%;
+}
+
+
+
+
+
