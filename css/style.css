@@ -17,7 +17,29 @@ body {
 a {
     color: white;
     text-decoration: none;
+    /*transition: all 3s;*/
 }
+
+/*using this selector we are saying ALL LINKS ON HOVER*/
+a:hover {/*psuedo selector*/
+    color:grey;
+    /*text-decoration: underline;*/ 
+}
+
+/*I can combine these two code blocks
+a:hover, a:active {combine both colors}*/
+
+/*as our mouse actively clicks we target the state*/
+a:active { /*this a psuedo selector because it enhances the current state*/
+    color:red;
+}
+
+/*a:last-child { /*takes the last link in the nav bar*/
+ /*   color: orange;
+}*/
+
+/* it is possible to create elements in CSS*/
+
 
 
 /*GLOBAL CLASSES*/
@@ -38,9 +60,45 @@ header h3 {
     color: white;
 }
 
+/*this is an injected element using psuedo selectors*/
+/*header h3:after {
+    content: 'hi there';
+} /* h3:before would place this text before LOGO*/
+
 header nav a:not(:last-child) {
     margin-right: 10px;
 }
+
+
+header nav a {
+    position: relative;
+}
+
+
+header nav a:after {
+    /*transform: scale(0,0);
+    transition: all 2s;*/
+}
+
+header nav a:nth-child(even) {
+    color: orange;
+}
+
+header nav a:hover:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    background-color: white;
+    bottom: -10px;
+    left: 0;
+    border-radius: 3px;
+    /*transition: all 2s;
+    transform: scale(1,1);*/
+} /*this creates a line that we control under my links*/
+
+
 
 /*this is a concept of a sticky footer layout*/
 main {
@@ -48,9 +106,11 @@ main {
     flex: 1; /*crucial in sticky footer design*/
 }
 
+
 main section {
     flex: 1;
 }
+
 
 /*work on the short hand of the flex property*/
 .left {
@@ -71,7 +131,26 @@ footer {
     padding: 30px 5%;
 }
 
+/*avoid getting to crazy with psuedo selectors. Try to stay with standard class systems*/
 
+/*placing media queries are a standard practice and best practice*/
 
+/*design and write my webpage with mobile first in mind!!!
+I can inspect my page and click the screen compatibilty of several different screen sizes*/
+
+/*column top to bottom layout is the first thing to do when building responsive layouts*/
+@media (max-width: 600px/*shorthand target of all is opening parenthese */){
+    main {
+        flex-direction: column;
+    }
+
+    .right {
+        order: 1;
+    }
+
+    .left {
+        order: 2;
+    }
+}
 
 
